@@ -7,6 +7,7 @@ nav {
     gap: 15px;
     padding: 15px;
     top: 20%;
+    transition: 0.7s all ease-in-out;
     
 
     background-color: black;
@@ -33,4 +34,14 @@ nav {
         }
 
     }
+}
+
+.hide-nav {
+    transform: translateX(-600px);
+}
+
+.nav-toggle {
+    position: absolute;
+    top: 32%;
+    transition: 0.7s all ease-in-out;
 }
