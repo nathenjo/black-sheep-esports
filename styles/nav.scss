@@ -1,0 +1,36 @@
+nav {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    height: 200px;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px;
+    top: 20%;
+    
+
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    border-radius: 0px 15px 15px 0px;
+
+    .button {
+        display: flex;
+        justify-content: center;
+
+        background-color: darkgray;
+        color: black;
+        padding: 5px;
+        border-radius: 10px;
+        border: 1px solid transparent;
+        transition: 0.35s all ease;
+
+        &:hover {
+            cursor: pointer;
+            color: white;
+            background-color: black;
+            border: 1px solid white;
+        }
+
+    }
+}
