@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import DeleteIcon from '@mui/icons-material/Delete';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function Nav(props) {
     const { propClassName, statePageLocation, stateSetPageLocation } = props;
@@ -8,18 +8,18 @@ export default function Nav(props) {
     const [showNav, setShowNav] = useState(true);
 
     useEffect(() => {  
-        document.querySelector('#nav-toggle-button').addEventListener('click', function() {
             if (showNav) {
-                document.querySelector('#nav-toggle-button').style.left = '6%';
+                document.querySelector('#nav-toggle-button').style.left = '8%';
+                document.querySelector('#nav-toggle-button').style.transform = 'rotate(0deg)';
                 document.querySelector('nav').classList.add('show-nav');
                 document.querySelector('nav').classList.remove('hide-nav');
             } else if(showNav == false) {
-                document.querySelector('#nav-toggle-button').style.left = '0';
+                document.querySelector('#nav-toggle-button').style.transform = 'rotate(180deg)';
+                document.querySelector('#nav-toggle-button').style.left = '1%';
                 document.querySelector('nav').classList.add('hide-nav');
                 document.querySelector('nav').classList.remove('show-nav');
             }
         })
-    })
 
     const setPageState = (e) => {
         e.preventDefault();
@@ -36,7 +36,7 @@ export default function Nav(props) {
                 <a className='button' onClick={(e) => setPageState(e)}>Schedule</a>
             </nav>
             <button id='nav-toggle-button' className='nav-toggle' onClick={() => setShowNav(!showNav)}>
-                <svg data-testid="DeleteIcon"></svg>
+                <FontAwesomeIcon icon="fa-solid fa-caret-left" />
             </button>
         </div>
     )

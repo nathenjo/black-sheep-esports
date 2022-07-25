@@ -1,0 +1,34 @@
+footer {
+    padding: 20px 0px;
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+
+    background-color: $gray;
+    color: $white;
+    .section-1 {
+        @include footer-card();
+        width: 50%;
+    }
+
+    .section-2 {
+        @include footer-card();
+        ul {
+            list-style: none;
+        }
+    }
+
+    .section-3 {
+        @include footer-card();
+        align-items: flex-start;
+        a {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            svg {
+                grid-column: 1/2;
+            }
+        }
+    }
+}

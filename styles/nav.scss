@@ -8,9 +8,11 @@ nav {
     padding: 15px;
     top: 20%;
     transition: 0.7s all ease-in-out;
+    width: 6%;
+    align-items: center;
     
 
-    background-color: black;
+    background-color: $green;
     color: white;
     font-size: 16px;
     border-radius: 0px 15px 15px 0px;
@@ -19,18 +21,18 @@ nav {
         display: flex;
         justify-content: center;
 
-        background-color: darkgray;
-        color: black;
+        background-color: $white;
+        color: $gray;
         padding: 5px;
         border-radius: 10px;
         border: 1px solid transparent;
         transition: 0.35s all ease;
+        width: 50%;
 
         &:hover {
             cursor: pointer;
-            color: white;
-            background-color: black;
-            border: 1px solid white;
+            color: $white;
+            background-color: $gray;
         }
 
     }
@@ -42,6 +44,21 @@ nav {
 
 .nav-toggle {
     position: absolute;
-    top: 32%;
+    top: 30%;
     transition: 0.7s all ease-in-out;
+    left: 8%;
+    padding: 10px;
+    font-size: 1.5em;
+    border: 1px solid transparent;
+    background-color: transparent;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    background-color: $green;
+    color: $white;
+
+    &:hover {
+        cursor: pointer;
+        box-shadow: inset 0px 0px 50px -22px $gray;
+    }
 }

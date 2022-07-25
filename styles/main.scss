@@ -1,3 +1,6 @@
+@import './variables.scss';
+@import './mixins.scss';
+
 * {
     padding: 0px;
     margin: 0px;
@@ -7,5 +10,10 @@ html {
     font-size: 62.5%;
 }
 
+body {
+    background-color: $white;
+}
+
 @import './home.scss';
 @import './nav.scss';
+@import './footer.scss';
