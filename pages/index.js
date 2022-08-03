@@ -19,24 +19,33 @@ export default function Home() {
 
     useEffect(() => {
 
-        axios.defaults.headers.common = {
-            "X-API-KEY": process.env.api_key
-        }
-    
-        axios({
+        var data = JSON.stringify({
+            "collection": "bankTransactions",
+            "database": "important-documents",
+            "dataSource": "PersonalCluster",
+            "projection": {
+                "_id": 1
+            }
+        });
+                    
+        var config = {
             method: 'post',
             url: 'https://data.mongodb-api.com/app/data-alxel/endpoint/data/v1/action/findOne',
-            data: {
-                "collection":"bankTransactions",
-                "database":"important-documents",
-                "dataSource":"PersonalCluster",
-                "projection": {"_id": 1}
-            }
-        }).then(response => {
-            console.log(response)
-        }).catch(error => {
-            console.log(error);
-        })
+            headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Request-Headers': '*',
+            'api-key': process.env.apiKey,
+            },
+            data: data
+        };
+                    
+        axios(config)
+            .then(function (response) {
+                console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     }, [])
 
     return(
